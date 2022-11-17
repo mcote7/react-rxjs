@@ -1,0 +1,48 @@
+.page {
+    .data {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        font-size: 12.2rem;
+        font-weight: bold;
+        -webkit-text-stroke: 0.22rem;
+        transition: -webkit-text-stroke 1111ms;
+        background-image: url("https://media1.giphy.com/media/3o85xJY1FaLzqeoBGw/giphy.gif");
+        background-clip: text;
+        color: transparent;
+    }
+    .dot {
+        border-radius: 50%;
+        transition: background-color 1111ms;
+    }
+    
+    $size: 3rem;
+    .x, .y {
+        height: $size;
+        width: $size;
+    }
+
+    .x {
+        animation: x 13s linear infinite alternate;
+    }
+    
+    .y {
+        animation: y 7s linear infinite alternate;
+    }
+    @keyframes x {
+        100% {
+            transform: translateX(calc(100vw - #{$size}));
+        }
+    }
+    @keyframes y {
+        100% {
+            transform: translateY(calc(100vh - #{$size}));
+        }
+    }
+}
+* {
+    ::selection {
+        color: rgb(255, 92, 0);
+        text-decoration: dotted underline;
+    }
+}
